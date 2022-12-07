@@ -13,14 +13,19 @@ let incompleteUI = document.querySelector(".incomplete-task");
 let completeUI = document.querySelector(".complete-task");
 
 //functions
+let taskSubmit = (event) => {
+  event.preventDefault();
+  let taskList = addTask(newTask.value);
+  incompleteUI.appendChild(taskList);
+  newTask.value = "";
+};
 
 let addTask = (task) => {
   let list = document.createElement("li");
   list.className = "list-group-item";
 
   let checkbox = document.createElement("input");
-  checkbox.type = checkbox;
-  checkbox.onchange = completeTask(task);
+  checkbox.setAttribute("type", "checkbox");
 
   let label = document.createElement("label");
   label.textContent = task;
@@ -48,4 +53,7 @@ let completeTask = (task) => {
   return list;
 };
 
-console.log(form);
+// console.log(form);
+
+//Event Listener
+form.addEventListener("submit", taskSubmit);
