@@ -33,10 +33,11 @@ let addTask = (task) => {
   let label = document.createElement("label");
   label.textContent = task;
 
-  list.appendChild(checkbox);
-  list.appendChild(label);
-
-  return list;
+  if (task != "") {
+    list.appendChild(checkbox);
+    list.appendChild(label);
+    return list;
+  }
 };
 
 let completeTask = (task) => {
