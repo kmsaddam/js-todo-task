@@ -6,16 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO Task APP</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        .incomplete-task li label {
+            padding-left: 10px;
+        }
+        .complete-task li label {
+            padding-right: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="row">
+            <div class="col-md-6 offset-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">New Task</h5>
+                        <form>
+                            <p class="text-center">
+                                <label>Enter your Task:</label>
+                                <input type="text" id="new-task" class="form-control mt-2" />
+                                <button class="btn btn-success mt-2" type="submit">Add Task</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Incomplete Task</h5>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
+                      <h5 class="card-title text-center">Incomplete Task</h5>
+                      <ul class="list-group incomplete-task">
+                        <li class="list-group-item"><input type="checkbox" /><label>Cras justo odio</label></li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                      </ul>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Complete Task</h5>
+                      <ul class="list-group complete-task">
+                        <li class="list-group-item"><label>Cras justo odio</label> <button class="btn btn-danger">Delete</button></li>
                         <li class="list-group-item">Dapibus ac facilisis in</li>
                         <li class="list-group-item">Vestibulum at eros</li>
                       </ul>
