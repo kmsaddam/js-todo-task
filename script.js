@@ -11,6 +11,7 @@ let form = document.querySelector("form");
 let newTask = document.querySelector("#new-task");
 let incompleteUI = document.querySelector(".incomplete-task");
 let completeUI = document.querySelector(".complete-task");
+let incompleteCheckbox = document.querySelector(".task-check");
 
 //functions
 let taskSubmit = (event) => {
@@ -25,7 +26,9 @@ let addTask = (task) => {
   list.className = "list-group-item";
 
   let checkbox = document.createElement("input");
+  checkbox.className = "task-check";
   checkbox.setAttribute("type", "checkbox");
+  checkbox.addEventListener("change", incompleteToComplete(task));
 
   let label = document.createElement("label");
   label.textContent = task;
@@ -53,7 +56,14 @@ let completeTask = (task) => {
   return list;
 };
 
+let incompleteToComplete = (task) => {
+  console.log(`ddd`);
+  //   let doneTask = completeTask(task);
+  //   completeUI.appendChild(doneTask);
+};
+
 // console.log(form);
 
 //Event Listener
 form.addEventListener("submit", taskSubmit);
+// incompleteCheckbox.addEventListener("change", incomPletetoComplete);
