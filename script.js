@@ -28,7 +28,7 @@ let addTask = (task) => {
   let checkbox = document.createElement("input");
   checkbox.className = "task-check";
   checkbox.setAttribute("type", "checkbox");
-  checkbox.addEventListener("change", incompleteToComplete(task));
+  checkbox.addEventListener("change", incompleteToComplete);
 
   let label = document.createElement("label");
   label.textContent = task;
@@ -49,6 +49,7 @@ let completeTask = (task) => {
   let btn = document.createElement("button");
   btn.className = "btn btn-danger";
   btn.textContent = "Delete";
+  btn.addEventListener("click", deleteTask);
 
   list.appendChild(label);
   list.appendChild(btn);
@@ -56,14 +57,18 @@ let completeTask = (task) => {
   return list;
 };
 
-let incompleteToComplete = (task) => {
-  console.log(`ddd`);
-  //   let doneTask = completeTask(task);
-  //   completeUI.appendChild(doneTask);
+let incompleteToComplete = (event) => {
+  event.preventDefault();
+  let task = event.target.nextSibling.textContent;
+  let list = completeTask(task);
+  completeUI.appendChild(list);
+  event.target.parentNode.remove();
 };
 
-// console.log(form);
+let deleteTask = (event) => {
+  event.preventDefault();
+  event.target.parentNode.remove();
+};
 
 //Event Listener
 form.addEventListener("submit", taskSubmit);
-// incompleteCheckbox.addEventListener("change", incomPletetoComplete);
