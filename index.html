@@ -13,6 +13,9 @@
         .complete-task li label {
             padding-right: 10px;
         }
+        input {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -25,7 +28,7 @@
                         <form>
                             <p class="text-center">
                                 <label>Enter your Task:</label>
-                                <input type="text" id="new-task" class="form-control mt-2" />
+                                <input type="text" id="new-task" class="form-control mt-2" autocomplete="off" />
                                 <button class="btn btn-success mt-2" type="submit">Add Task</button>
                             </p>
                         </form>
