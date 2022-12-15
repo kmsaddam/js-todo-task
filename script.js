@@ -1,4 +1,3 @@
-//console.log(`Test.........`);
 /*
 Project: TODO Task 
 Technology: HTML, CSS, Vanila JS
